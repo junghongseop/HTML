@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM예제</title>
+</head>
+<body>
+    <button id="myButton1">김예진</button>
+    <br><br>
+    <button id="myButton2">이지우</button>
+    <br><br>
+    <button id="myButton3">전유진</button>
+    <br><br>
+    <button id="myButton4">배재현(앨레강스 뽀삐배)</button>
+    <br><br>
+    <p></p>
+    <script>
+        //버튼 요소 가져오기
+        const button1 = document.getElementById("myButton1");
+        //클릭 이벤트 리스너 등록
+        button1.addEventListener("click", function(){
+            //버튼의 텍스트 변경
+            button1.textContent = "에엥!!!";
+        });
+
+        const button2 = document.getElementById("myButton2");
+        button2.addEventListener("click", function(){
+            button2.textContent = "우쨜!!!";
+            button2.style.color = "blue";
+        });
+
+        const button3 = document.getElementById("myButton3");
+        button3.addEventListener("click", function(){
+            button3.textContent = "변순데";
+            button3.style.color = "white";
+            button3.style.backgroundColor = "black";
+        });
+        const button4 = document.getElementById("myButton4");
+        button4.addEventListener("click", function(){
+            button4.textContent = "뽀삐는 사람이 아니야";
+            button4.style.color = "black";
+            button4.style.backgroundColor = "white";
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 예제2</title>
+</head>
+<body>
+    <button id="myButton">클릭</button>
+    <ul>
+        <li>할 일 1</li>
+        <li class="done">할 일 2</li>
+        <li>할 일 3</li>
+        <li class="done">할 일 4</li>
+        <li>할 일 5</li>
+    </ul>
+    <script>
+        const button = document.getElementById("myButton");
+        button.addEventListener("click", function(){
+            button.textContent = "클릭 완료";
+            //done클래스를 가지고 있는 li 요소들 삭제
+            const doneElements = document.querySelectorAll(".done");
+            for (let i = 0; i < doneElements.length; i++){
+                doneElements[i].parentNode.removeChild(doneElements[i]);
+            }
+            button.style.color = "black";
+            button.style.backgroundColor = "white";
+        });
+    </script>
+</body>
+</html>

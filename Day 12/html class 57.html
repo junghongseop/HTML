@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom 예제3</title>
+    <style>
+        .highlight{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <button id="myButton">클릭하세요!</button>
+    <h1>첫 번째 제목</h1>
+    <h1>두 번째 제목</h1>
+    <h1>세 번째 제목</h1>
+    <script>
+        const button = document.getElementById("myButton");
+        button.addEventListener("click", function(){
+            button.textContent = "클릭되었습니다!";
+
+            //h1 요소들의 글꼴 색상 변경
+            const h1Elements = document.querySelectorAll("h1");
+            for (let i = 0; i < h1Elements.length; i++){
+                h1Elements[i].classList.add("highlight");
+            }
+        });
+    </script>
+</body>
+</html>
