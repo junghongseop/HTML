@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transform:translate</title>
+    <style>
+        #container{
+            width: 1200px;
+            height: 200px;
+            margin: 40px auto;
+            font-size: 11px;
+        }
+        .origin{
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            float: left;
+            margin: 20px 40px;
+        }
+        .origin > div{
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+        }
+        h2{
+            clear: left;
+        }
+        #movex:hover{
+            transform: translate(50px);
+        }
+        #movey:hover{
+            transform: translateY(20px);
+        }
+        #movexy:hover{
+            transform: translate(10px 20px);
+        }
+        #scalex:hover{
+            transform: scaleX(2);
+        }
+        #scaley:hover{
+            transform: scaleY(1.5);
+        }
+        #scale:hover{
+            transform: scale(0.7);
+        }
+        #rotate1:hover{
+            transform: rotate(40deg);
+        }
+        #rotate2:hover{
+            transform: rotate(-40deg);
+        }
+        #pers{
+            perspective: 300px;
+        }
+        .rotateX:hover{
+            transform: rotateX(50deg);
+        }
+        .rotatey:hover{
+            transform: rotatey(50deg);
+        }
+        .rotatez:hover{
+            transform: rotatez(50deg);
+        }
+        .rotatexyz:hover{
+            transform: rotate3d(2.5, 1.2, -1.5, 55deg);
+        }
+        .skewx:hover{
+            transform: skewX(20deg);
+        }
+        .skewy:hover{
+            transform: skewY(15deg);
+        }
+        .skewxy:hover{
+            transform: skewxy(-25deg -15deg);
+        }
+        img{
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h2>transform: 변형함수(translate: 이동, sclae: 크기, rotate: 회전, perspective원근감)</h2>
+        <div class="origin">
+            <div id="movex">translateX(50px)</div>
+        </div>
+        <div class="origin">
+            <div id="movey">translateY(20px)</div>
+        </div>
+        <div class="origin">
+            <div id="movexy">translate(10px, 20px)</div>
+        </div>
+        <div class="origin">
+            <div id="scalex">scaleX(2)</div>
+        </div>
+        <div class="origin">
+            <div id="scaley">scaleY(1.5)</div>
+        </div>
+        <div class="origin">
+            <div id="scalexy">scale(0.7)</div>
+        </div>
+        <div class="origin" id="rotate1">rotate(40deg)
+            <img src="images/tree.jpg">
+        </div>
+        <div class="origin" id="rotate1">rotate(-40deg)
+            <img src="images/tree.jpg">
+        </div>
+        <div class="origin" id="rotate2">
+            <div class="rotatex">perspective x
+                <img src="images/sunset.jpg" alt="">
+            </div>
+        </div>
+        <div class="origin" id="rotate2">
+            <div class="rotatex">perspective y 
+                <img src="imgaes/sunset.jpg" alt="">
+            </div>
+        </div>
+        <div class="origin" id="rotate2">
+            <div class="rotatez">perspective y 
+                <img src="images/sunset.jpg" alt="">
+            </div>
+        </div>
+        <div class="origin" id="rotate2">
+            <div class="rotatexyz">perspective xyz
+                <img src="images/sunset.jpg" alt="">
+            </div>
+        </div>
+        <br>
+        <h2>transform: 변형함수(skew:비둘기)</h2>
+        <div class="origin">
+            <div class="skewx">skewX
+                <img src="images/tree.jpg" alt="">
+            </div>
+        </div>
+        <div class="origin">
+            <div class="skewy">skewy
+                <img src="images/tree.jpg" alt="">
+            </div>
+        </div>
+        <div class="origin">
+            <div class="skewxy">skewxy
+                <img src="images/tree.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

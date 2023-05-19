@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transition</title>
+    <style>
+        #basic div{
+            width: 100px;
+            height: 100px;
+            float: left;
+            margin: 30px;
+        }
+        .bg-trl{
+            background-color: skyblue;
+            transition: all;
+            transition-timing-function: ease;
+            transition-duration: 1s;
+        }
+        .bg-trl:hover{
+            background-color: blue;
+        }
+        .border-tr2{
+            background-color: orange;
+            border: 3px solid black;
+            transition-timing-function: linear;
+            transition-duration: 1.5s;
+        }
+        .border-tr2:hover{
+            border: 3px solid red;
+            border-radius: 50%;
+        }
+        .box3{
+            float: left;
+            margin: 30px auto;
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            color: white;
+            border: 1px solid darkgray;
+            transition-property: width, height;
+            transition-duration: 2s, 1s;
+        }
+        .box3:hover{
+            width: 200px;
+            height: 120px;
+        }
+        .box4{
+            margin: 50px auto;
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            border: 1px solid #222;
+            transition: 2s ease-in;
+        }
+        .box4:hover{
+            width: 200px;
+            height: 200px;
+            background-color: orangered;
+            transform: rotate(270deg);
+        }
+        #ex div{
+            float: left;
+            width: 150px;
+            height: 50px;
+            margin: 5px 10px;
+            padding: 5px;
+            color: white;
+            background-color: #006aff;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+        }
+        #ex div:hover{
+            height: 400px;
+        }
+        #ex .ease{
+            transition: 3s ease;
+        }
+        #ex .linear{
+            transition: 3s linear;
+        }
+        #ex .ease-in{
+            transition: 3s ease-in;
+        }
+        #ex .ease-out{
+            transition: 3s ease-out;
+        }
+        #ex .ease-in-out{
+            transition: 3s ease-in-out;
+        }
+    </style>
+    
+</head>
+<body>
+    <div id = "basic">
+        <div class = "bg-trl">1.배경색 1초간 전이</div>
+        <div class = "border-tr2">2.테두리 1.5초간 전이</div>
+    </div>
+    <div class = "box3">3.너비는 2초,높이는 1초간 전이</div>
+    <div class = "box4">4.회전하면서 너비,높이,배경색바뀜</div>
+    <p style = "clear:left">5.트랜지션 속도곡선(transition-timing-fuction)</p>
+    <div id = "ex">
+        <div class = "ease"> ease<br>(천천히 시작하고 점점빨라지다 천천히 끝냄,기본값)</div>
+        <div class = "linear"> linear<br>(처음부터 끝까지 같은 속도)</div>
+        <div class = "ease-in"> ease-in<br>(느리게 시작함)</div>
+        <div class = "ease-out"> ease-out<br>(느리게 끝냄)</div>
+        <div class = "ease-in-out"> ease-in-out<br>(느리게 시작하고 느리게 끝냄)</div>
+    </div>
+</body>
+</html>
