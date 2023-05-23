@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    #container{
+      display:flex;
+    }  
+    #container div{
+      padding:0 20px 30px 20px;
+      margin:15px;
+      border:1px solid #ccc;
+      line-height:2;
+     
+    }
+    div h3 {
+      text-align:center;
+      font-weight:bold;
+    }
+    </style>
+</head>
+<body>
+<html>
+    <h1>구구단</h1>
+    <div id="container"></div>
+  <script>
+    let $con = document.getElementById("container");
+    let htmlTxt="";
+    for (let i=1;i<=9;i++){
+        htmlTxt = htmlTxt + "<div><h3>" + i + "단</h3>";
+        for (let j=1;j<=9;j++){
+            htmlTxt = htmlTxt + i + "X" + j + " = " + i*j +"<br>"
+        }
+    htmlTxt = htmlTxt + "</div>";
+    }
+    $con.innerHTML = htmlTxt 
+    </script>
+</html>
+</body>
