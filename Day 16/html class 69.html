@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+    <style>
+        button{
+            text-align: center;
+        }
+        #container{
+            width:100%;
+            background-color:#ddd;
+        }
+        #pbar{
+            width: 0;
+            height: 30px;
+            line-height:30px;
+            background-color: #8c9cec;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="pbar"></div>
+    </div>
+    <br>
+    <button type="button" onclick="pstart()" id="startButton">progress</button>
+    <script>
+        let i=0;
+        function pstart(){
+        let startButton = document.getElementById("startButton");
+        if (i==0){
+            startButton.disabled = true; 
+            let pbarDiv = document.getElementById("pbar");
+            let pbarWidth = 0;
+            let id = setInterval(frame,100);
+            function frame(){
+                if (pbarWidth >= 100){ 
+                    clearInterval(id);
+                    i=0;
+                    startButton.disabled = false; 
+                }
+                else{
+                    pbarWidth++;
+                    pbarDiv.style.width = pbarWidth+"%";
+                    pbarDiv.innerHTML = pbarWidth + "%";
+                }
+            }
+        }
+    }
+   </script>
+</body>
+</html>

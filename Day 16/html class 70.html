@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        #container {
+            width: 100%;
+            background-color: #ddd;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #pbar {
+            width: 0;
+            height: 30px;
+            line-height: 30px;
+            background-color: #8c9cec;
+            text-align: center;
+        }
+
+        button {
+            text-align: center;
+        }
+    </style>
+
+    <div id="container">
+        <div id="pbar"></div>
+    </div>
+    <br>
+    <div style="display: flex; justify-content: center;">
+        <button type="button" onclick="pstart()" id="startButton">progress</button>
+    </div>
+
+    <script>
+        let i = 0;
+
+        function pstart() {
+            let startButton = document.getElementById("startButton");
+            if (i == 0) {
+                startButton.disabled = true; // Disable the button
+                let pbarDiv = document.getElementById("pbar");
+                let pbarWidth = 0;
+                let id = setInterval(frame, 100);
+                function frame() {
+                    if (pbarWidth >= 100) {
+                        clearInterval(id);
+                        i = 0;
+                        startButton.disabled = false; // Enable the button
+                    } else {
+                        pbarWidth++;
+                        pbarDiv.style.width = pbarWidth + "%";
+                        pbarDiv.innerHTML = pbarWidth + "%";
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
